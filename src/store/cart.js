@@ -1,14 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialCartState = {showCart: false, cartItems: [{ title: "Test Item", quantity: 3, total: 18, price: 6 }]};
+const initialCartState = {cartItems: []};
 
 const cartSlice = createSlice({
     name: "cart",
     initialState: initialCartState,
     reducers: {
-        toggleCart(state){
-            state.showCart = !state.showCart;
-        },
         addItem(state,action){
             const existingCartItem = state.cartItems.find(ele => ele.title === action.payload.title);
             if(existingCartItem){

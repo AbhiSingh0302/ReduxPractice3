@@ -5,7 +5,7 @@ import classes from "./Cart.module.css";
 import CartItem from "./CartItem";
 
 const Cart = (props) => {
-  const cartItems = useSelector(state => state.cartItems);
+  const cartItems = useSelector(state => state.cart.cartItems);
 
   return (
     <Modal>

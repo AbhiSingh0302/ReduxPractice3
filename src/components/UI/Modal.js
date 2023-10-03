@@ -2,13 +2,13 @@ import { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import classes from './Modal.module.css';
 import { useDispatch } from 'react-redux';
-import { cartActions } from '../../store/cart';
+import { uiActions } from '../../store/ui-slice';
 
 const Backdrop = props => {
     const dispatch = useDispatch();
 
     const hideCart = () => {
-        dispatch(cartActions.toggleCart());
+        dispatch(uiActions.toggleCart());
     }
     
     return <div className={classes.backdrop} onClick={hideCart}/>
